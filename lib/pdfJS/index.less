@@ -1,0 +1,42 @@
+.pdfViewerContainer {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #525659;
+  font-family: Roboto, system-ui,PingFang SC,STHeiti,sans-serif;
+  font-size: 81.25%;
+  
+
+
+  .controllBar {
+    background: #323639;
+    position: absolute;
+    width: 100%;
+    height: 48px;
+    z-index: 1;
+    // opacity: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    // 覆盖antd 的pagebar style
+    :global {
+      .ant-pagination-simple .ant-pagination-simple-pager input {
+        color: #000;
+      }
+      .ant-pagination-simple .ant-pagination-simple-pager {
+        color: #000;
+      }
+    }
+  }
+  .controllBar:hover {
+    opacity: 1;
+  }
+  
+  .buttonIcon {
+    font-size: 28px;
+    margin: 0 8px;
+    color: #fff;
+  }
+  
+}

@@ -1,0 +1,29 @@
+
+
+{
+    "compilerOptions": {
+      "outDir": "./dist/",
+      "target": "esnext",
+      "module": "esnext",
+      "noImplicitAny": false,
+      "importHelpers": true,
+      "esModuleInterop": true,
+      "sourceMap": true,
+      "jsx": "react",
+      "baseUrl": ".",
+      "experimentalDecorators": true,
+      "paths": {
+        "@/*": ["components/*"]
+      },
+      "allowSyntheticDefaultImports": true,
+      "allowJs": true,
+      "moduleResolution": "node",
+      "strict": false
+
+    },
+    "include": [
+        "./components/**/*",
+        "./index.d.ts"
+    ]
+  }
+  

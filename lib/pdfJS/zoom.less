@@ -1,0 +1,24 @@
+.zoomContainer{
+    bottom: 0;
+    padding: 48px 0;
+    position: fixed;
+    right: 0;
+    user-select: none;
+    z-index: 3;
+    .zoom-buttons{
+        position: relative;
+        right: 48px;
+    }
+
+    .wrapper{
+        transition: transform 250ms;
+        --button-position-offset: 48px;
+        
+    }
+    .hidden{
+        .wrapper{
+            transform: translateX(132px);
+            transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+        }
+    }
+}
