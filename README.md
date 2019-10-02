@@ -1,35 +1,34 @@
-# 日拱一卒无有尽,功不唐捐终入海
 
-# 一个pdf展示组件
+English | [简体中文](./README-zh_CN.md)
 
-支持流pdf文件预览 和 静态pdf文件预览
+# A react component to show pdf with stream data
+> Step forward everyday and never stop, your hard work will never be wasted and always have something in return.
 
-本组件最大亮点是支持 ~流~pdf文件预览，而且加上了 类似chrome 默认pdf的功能按钮样式
+# Usefulness
 
-
-
-# 功能
-1. 支持流pdf文件预览
-2. ui和chrome默认ui一致
+* support view pdf with stream data
+* same ui with default chrome pdf-viewer plugins
 
 
-# 过程记录
-* [x] 普通的embed 和 iframe
-* [x] 按钮部分，痛苦，因为有ripple效果，搞了半天，待优化
-* [x] topbar 和 右侧bar 动画  ，看chrome自带的pdf，emmm，写得真好哦
-* [x] 全屏、放大、缩小
-* [x] 旋转
-* [x] 分页
+# Porcess
+* [x] add types *embed* & *iframe*, both of those just support 
+普通的embed 和 iframe
+* [x] add ripple effect for button
+* [x] topbar and zoombar's animation like chrome ui
+* [x] add full screen and  zoom out / in
+* [x] add roate button
+* [x] pagination
 * [x] loading
-* [ ] 监听键盘左右按键，pdf容器部分 监听
-* [ ] 双指或鼠标滚轮，放大监听，在pdf展示区域
-* [ ] 两种模式切换==》 分页/全部（监听滚动渲染）
-* [ ] annotion ==》 记号笔 ，划线，框，添加注释
-* [ ] 滚动条样式， 上下滚动条的样式
-* [ ] 点击 根据height展示，隐藏topbar，不隐藏 zoombar'
-* [ ] 下载，带默认也要给接口
-* [ ] 打印，带默认也要给接口
-* [ ] 还要给额外的button 地方，可以拿到内部属性
+* [ ] can config using cdn or local pdf.js
+* [ ] listen right mouse button 
+* [ ] two fingers zoom control in mac and ctrl + mouse roll control
+* [ ] two modes: pagination control / show all and control with mouse roll
+* [ ] annotion ==> mark, underscore, box-line
+* [ ] the style of scroll bar
+* [ ] when click full screen in max height, hide topbar , do not hide zoombar
+* [ ] dowload modal. No directly downlaod
+* [ ] print
+* [ ] external api
 
 
 
@@ -37,6 +36,7 @@
 
 
 # TODO 
-1. 目前pdf文件被转换成canvas，不能编辑和复制，编辑修改pdf，保存；需要判断pdf类型，是否是图片还是文本，针对文本，可以进行编辑 highlight等
-2. 兼容性测试
+1. for now the file is show in type of canvas and cannot be modified, such as adding annotion; so next step is to transform in different situation to show pdf for editing pdf and highlight someting.
+2. Browser Compatibility
+3. read pdf.js and write a new one
 3. 。。。
