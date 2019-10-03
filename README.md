@@ -4,15 +4,26 @@ English | [简体中文](./README-zh_CN.md)
 # A react component to show pdf with stream data
 > Step forward everyday and never stop, your hard work will never be wasted and always have something in return.
 
-# Usefulness
+# ✨Features
 
 * support view pdf with stream data
 * same ui with default chrome pdf-viewer plugins
 
+# 📦 Install
+`npm install react.pdf.stream --save`
+
+
+# 🔨 Usage
+```javascript
+import PDFView from 'react.pdf.stream';
+ReactDOM.render(<PDFView filePath="required" />, mountNode);
+```
+
+# 🤝 Contributing
+
 
 # Porcess
 * [x] add types *embed* & *iframe*, both of those just support 
-普通的embed 和 iframe
 * [x] add ripple effect for button
 * [x] topbar and zoombar's animation like chrome ui
 * [x] add full screen and  zoom out / in

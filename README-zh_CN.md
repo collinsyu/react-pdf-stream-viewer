@@ -10,9 +10,22 @@
 
 
 
-# 功能
+# ✨ 功能
 1. 支持流pdf文件预览
 2. ui和chrome默认ui一致
+
+# 📦 安装
+`npm install react.pdf.stream --save`
+
+
+# 🔨 示例
+```javascript
+import PDFView from 'react.pdf.stream';
+ReactDOM.render(<PDFView filePath="required" />, mountNode);
+```
+
+# 🤝 欢迎提bug
+
 
 
 # 过程记录
