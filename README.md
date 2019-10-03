@@ -1,5 +1,5 @@
 
-English | [简体中文](./README-zh_CN.md)
+English | [简体中文](https://github.com/collinsyu/react-pdf-stream-viewer/blob/master/README-zh_CN.md)
 
 # A react component to show pdf with stream data
 > Step forward everyday and never stop, your hard work will never be wasted and always have something in return.
