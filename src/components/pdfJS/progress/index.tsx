@@ -1,5 +1,5 @@
 import React,{ Component,PureComponent } from 'react'
-import style from "./index.less";
+import "./index.less";
 
 export interface ContainerProps {
     [key: string]: any;
@@ -40,11 +40,11 @@ export default class Container extends PureComponent<ContainerProps> {
     }
     render(){
         return (
-            <div className={style.progressContainer}>
-                <div className={style.progressBar}>
-                    <div className={style.progressBox}> 
-                        <div className={style.secondaryProgress}></div>
-                        <div ref={main=>this.main=main} className={style.primaryProgress}></div>
+            <div className={"progressContainer"}>
+                <div className={"progressBar"}>
+                    <div className={"progressBox"}> 
+                        <div className={"secondaryProgress"}></div>
+                        <div ref={main=>this.main=main} className={"primaryProgress"}></div>
                     </div>
                 </div>
             </div>

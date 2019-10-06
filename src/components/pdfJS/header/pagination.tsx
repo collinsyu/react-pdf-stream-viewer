@@ -1,5 +1,5 @@
 import React,{ Component,PureComponent } from 'react'
-import style from "./pagination.less";
+import "./pagination.less";
 import ArrowLeft from "../Icons/arrow-left";
 import ArrowRight from "../Icons/arrow-right";
 
@@ -71,15 +71,15 @@ export default class Container extends PureComponent<ContainerProps,ContainerPro
             return null
         }
         return (
-            <div className={style.pagination}>
-                <div className={style.pageselector}>
+            <div className={"pagination"}>
+                <div className={"pageselector"}>
                     <span onClick={()=>{this.onarraw(false)}} style={{width:20,cursor:value==1?"not-allowed":"pointer"}}>
                         <ArrowLeft />
                     </span>
-                    <div className={style.pageselector_container} style={{width:`calc(${x}ch)`}}>
-                        <div className={style.row_container} >
-                            <div className={style.input_container}>
-                                <div className={style.inner_input_container}>
+                    <div className={"pageselector_container"} style={{width:`calc(${x}ch)`}}>
+                        <div className={"row_container"} >
+                            <div className={"input_container"}>
+                                <div className={"inner_input_container"}>
                                     <input 
                                     onKeyDown={this.onkeydown}
                                     value={value} 
@@ -87,12 +87,12 @@ export default class Container extends PureComponent<ContainerProps,ContainerPro
                                     aria-label="页码" 
                                     onBlur={this.onblur}/>
                                 </div>
-                                <div className={style.underline}></div>
+                                <div className={"underline"}></div>
                             </div>
                         </div>
                     </div>
                     <span>/</span>
-                    <span className={style.total}>{total}</span>
+                    <span className={"total"}>{total}</span>
                     <span onClick={()=>{this.onarraw(true)}} style={{width:20,cursor:value==total?"not-allowed":"pointer"}}>
                         <ArrowRight />
                     </span>

@@ -6,7 +6,7 @@ import Minus from "./minus";
 import Plus from "./plus";
 import Screen from "./screen";
 import ScreenShirk from "./screen-shirk";
-import style from "./icon2.less";
+import "./icon2.less";
 
 
 function getOffsetTop(obj){
@@ -122,16 +122,16 @@ export default class Container extends PureComponent<ContainerProps> {
         
 
         return (
-            <div className={style.iconContainer} onClick={()=>{
+            <div className={"iconContainer"} onClick={()=>{
                 if(this.props.onClick){
                     this.props.onClick()
                 }
             }}>
-                <div className={style.iconBox}>
-                    <div className={style.icon}>
+                <div className={"iconBox"}>
+                    <div className={"icon"}>
                         {dom}
                     </div>
-                    <div className={`${style.rippleWrapper}`}
+                    <div className={`rippleWrapper`}
                     // onMouseUp={this.end}
                     ref={wrapper=>this.wrapper=wrapper}  
                     onMouseDown={this.start}
@@ -139,7 +139,7 @@ export default class Container extends PureComponent<ContainerProps> {
                         <div 
                         
                         ref={ripple=>this.ripple=ripple} 
-                        className={style.ripple}>
+                        className={"ripple"}>
 
                         </div>
                         

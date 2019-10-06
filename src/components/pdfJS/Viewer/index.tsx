@@ -1,5 +1,5 @@
 import React,{ Component,PureComponent } from 'react'
-import style from "./index.less";
+import "./index.less";
 import GestureDetector from "./gesture_detector";
 // import Viewport from './viewpoer';
 export interface ContainerProps {
@@ -100,8 +100,8 @@ export default class Container extends PureComponent<ContainerProps> {
     }
     render(){
         return (
-            <div className={style.pdfViewer} id="the-canvas-container" ref={pdfviewer=>this.pdfviewer = pdfviewer}>
-                <canvas id="the-canvas" className={style.canvas}></canvas>
+            <div className={"pdfViewer"} id="the-canvas-container" ref={pdfviewer=>this.pdfviewer = pdfviewer}>
+                <canvas id="the-canvas" className={"canvas"}></canvas>
             </div>
         )
     }

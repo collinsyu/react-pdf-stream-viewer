@@ -20,7 +20,7 @@ function readDirSync(path){
       if(ele.indexOf(".less")!==-1){
         // console.log("所在位置：",path);
         // console.log("mac file: "+ele);
-        var newPath = path.replace(rootPath+"/components",rootPath+"/lib");
+        var newPath = path.replace(rootPath+"/components",rootPath+"/dist");
         // console.log("新地址是：",newPath);
         // 复制
         fs.copyFileSync(path+"/"+ele, newPath+"/"+ele);

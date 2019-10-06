@@ -1,45 +1,47 @@
-.progressContainer{
-    bottom: 0;
-    left: 0;
-    margin: 0;
-    position: absolute;
-    right: 0;
-    top: auto;
-    width: auto;
-}
-.progressBar{
-    // --paper-progress-active-color: var(--google-blue-300);
-    // --paper-progress-container-color: transparent;
-    // --paper-progress-height: 3px;
-    transition: opacity 150ms;
-    width: 100%;
-}
-.progressBox{
-    background: transparent;
-    height: 3px;
-    position: relative;
-}
-
-.secondaryProgress{
-    background: rgb(183, 225, 205);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transform-origin: left center;
-    transform: scaleX(0);
-    will-change: transform;
-}
-
-.primaryProgress{
-    background: #7baaf7;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transform-origin: left center;
-    transform: scaleX(0);
-    will-change: transform;
+:global{
+    .progressContainer{
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        position: absolute;
+        right: 0;
+        top: auto;
+        width: auto;
+    }
+    .progressBar{
+        // --paper-progress-active-color: var(--google-blue-300);
+        // --paper-progress-container-color: transparent;
+        // --paper-progress-height: 3px;
+        transition: opacity 150ms;
+        width: 100%;
+    }
+    .progressBox{
+        background: transparent;
+        height: 3px;
+        position: relative;
+    }
+    
+    .secondaryProgress{
+        background: rgb(183, 225, 205);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform-origin: left center;
+        transform: scaleX(0);
+        will-change: transform;
+    }
+    
+    .primaryProgress{
+        background: #7baaf7;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform-origin: left center;
+        transform: scaleX(0);
+        will-change: transform;
+    }
 }

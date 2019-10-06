@@ -15,12 +15,13 @@
   "scripts": {
     "clean": "rm -rf dist components",
     "cpless": "node script.js",
-    "cpcomponents":"cp -r src/components/ components ",
-    "babel": "babel dist --out-dir lib",
+    "cpcomponents": "cp -r src/components/ components ",
+    "babel": "babel dist --out-dir lib --copy-files",
     "mvless": "node script.js",
-    "tsc":"npm run cpcomponents && tsc",
+    "tsc": "npm run cpcomponents && tsc",
     "build-ts": "npm run babel && npm run mvless && npm run lib:index",
     "lib:index": "babel index.es6.js --out-file index.js",
+    "pub": "webpack",
     "demo": "umi dev"
   },
   "files": [
@@ -53,6 +54,7 @@
     "babel-cli": "^6.18.0",
     "babel-eslint": "^8.1.2",
     "babel-jest": "^22.0.4",
+    "babel-loader": "^8.0.6",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-css-modules-transform": "^1.6.1",
     "babel-plugin-dva-hmr": "^0.4.1",
@@ -66,8 +68,10 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
+    "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^5.1.1",
     "cross-port-killer": "^1.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
     "gh-pages": "^1.0.0",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
@@ -79,7 +83,8 @@
     "typescript": "^3.6.3",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.8.1"
+    "webpack-dev-server": "^3.8.1",
+    "webpack-node-externals": "^1.7.2"
   },
   "lint-staged": {
     "**/*.{js,jsx}": "lint-staged:js",

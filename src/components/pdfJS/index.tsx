@@ -1,5 +1,5 @@
 import React, { PureComponent, Component } from 'react';
-import style from './index.less';
+import './index.less';
 import loadScript from "../utils/loadScript";
 import Header from "./header/Header"
 import Zoom from "./Zoom"
@@ -289,7 +289,7 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
     // console.log('this.state', this.state);
 
     return (
-      <div className={style.pdfViewerContainer}>
+      <div className={"pdfViewerContainer"}>
         {/* new header with toolbar */}
         <Header
         filePath={filePath}

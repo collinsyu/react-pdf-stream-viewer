@@ -1,5 +1,5 @@
 import React,{ Component,PureComponent } from 'react'
-import style from "./header.less";
+import "./header.less";
 import Icon from "../Icons";
 import Pagination from "./pagination";
 import Progress from "../progress"
@@ -55,11 +55,11 @@ export default class Container extends PureComponent<ContainerProps> {
         const { total=0, current} = pageProps
         
         return (
-            <div className={style.toolbarContainer} ref={header=>this.header=header}>
-                <div className={style.toolbar}>
-                    <div className={style.aligner}>
+            <div className={"toolbarContainer"} ref={header=>this.header=header}>
+                <div className={"toolbar"}>
+                    <div className={"aligner"}>
                         {/* title */}
-                        <span className={style.title} >
+                        <span className={"title"} >
                             text-est.pdf
                         </span>
                         {/* pagination */}
@@ -69,7 +69,7 @@ export default class Container extends PureComponent<ContainerProps> {
                         current={current}
                         />
                         {/* rightbar */}
-                        <div className={style.buttons}>
+                        <div className={"buttons"}>
                             <Icon type="roate-right" onClick={roate}/>
                             <Icon type="file-download" onClick={this.download}/>
                             <Icon type="print" onClick={()=>console.log("rotae click")}/>
