@@ -11,14 +11,12 @@
     "transform-object-rest-spread",
     "transform-decorators-legacy",
     "transform-remove-strict-mode",
-    ["import", { "libraryName": "antd", "style": true }],
-
     ["transform-runtime",{
       "helpers": false,
       "polyfill": false,
       "regenerator": true,
       "moduleName": "babel-runtime"
-    }],
+    }]
 
-  ],
+  ]
 }
