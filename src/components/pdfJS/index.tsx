@@ -32,6 +32,8 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
   staticZoomHeight: number;
   PDF: any;
   screenType: string | undefined;
+  container: HTMLDivElement;
+  firstLoadOver: boolean;
   
   constructor(props:IndexProps) {
     super(props);
@@ -55,6 +57,7 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
     this.isMouseNearSideToolbar_ = false;
     this.isMouseNearTopToolbar_ = false;
     this.reverseSideToolbar_ = false;
+    this.firstLoadOver=false;
   }
   componentWillReceiveProps(nextProps:any) {
     if (this.props.filePath !== nextProps.filePath) {
@@ -78,6 +81,9 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
     
   }
   hideToolbarsAfterTimeout() {
+    if(!this.firstLoadOver){
+      return
+    }
     if (this.toolbarTimeout_) {
       this.window_.clearTimeout(this.toolbarTimeout_);
     }
@@ -85,11 +91,16 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
         this.hideToolbarsIfAllowed, HIDE_TIMEOUT);
   }
   handleMouseMove=(e:any)=>{
+    // 之所以这样写，是因为组件可能不是最顶层的，可能会放到各种位置容器，不一定是body
+    let showToolbar = isMouseNearTopToolbar({y:e.y - this.container.offsetTop} as any);
     // 判断 当前bar状态 和 距离
-    let showToolbar = isMouseNearTopToolbar(e);
+    // let showToolbar = isMouseNearTopToolbar(e);
     this.isMouseNearTopToolbar_ = showToolbar;
 
-    let showZoombar = isMouseNearSideToolbar(e, this.window_, this.reverseSideToolbar_);
+    let showZoombar = isMouseNearSideToolbar({
+      y:e.y - this.container.offsetTop,
+      x:e.x + this.container.offsetLeft
+    } as any, this.window_, this.reverseSideToolbar_);
     this.isMouseNearSideToolbar_ = showZoombar;
     let x = this.state.showToolbar && this.state.showZoombar;
     if(!x){
@@ -170,7 +181,7 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
           _self.hideToolbarsAfterTimeout();
           _self.setState({process:100});
           _self.setStaticZoom()
-
+          _self.firstLoadOver=true;
           
           return true
         });
@@ -289,7 +300,7 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
     // console.log('this.state', this.state);
 
     return (
-      <div className={"pdfViewerContainer"}>
+      <div className={"pdfViewerContainer"} ref={container=>this.container=container}>
         {/* new header with toolbar */}
         <Header
         filePath={filePath}
