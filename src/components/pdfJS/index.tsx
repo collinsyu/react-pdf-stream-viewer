@@ -99,7 +99,7 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
 
     let showZoombar = isMouseNearSideToolbar({
       y:e.y - this.container.offsetTop,
-      x:e.x + this.container.offsetLeft
+      x:e.x + window.innerWidth - this.container.offsetWidth
     } as any, this.window_, this.reverseSideToolbar_);
     this.isMouseNearSideToolbar_ = showZoombar;
     let x = this.state.showToolbar && this.state.showZoombar;

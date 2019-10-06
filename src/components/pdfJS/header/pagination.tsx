@@ -76,7 +76,7 @@ export default class Container extends PureComponent<ContainerProps,ContainerPro
                     <span onClick={()=>{this.onarraw(false)}} style={{width:20,cursor:value==1?"not-allowed":"pointer"}}>
                         <ArrowLeft />
                     </span>
-                    <div className={"pageselector_container"} style={{width:`calc(${x}ch)`}}>
+                    <div className={"pageselector_container"} style={{width:`calc(${x*2}ch)`}}>
                         <div className={"row_container"} >
                             <div className={"input_container"}>
                                 <div className={"inner_input_container"}>

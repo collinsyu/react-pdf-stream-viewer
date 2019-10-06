@@ -37,7 +37,7 @@ export function isMouseNearTopToolbar(e) {
  * screen.
  */
 export function isMouseNearSideToolbar(e, window, reverse) {
-  console.log(e.y);
+  console.log(e.x);
   
   let atSide = e.x > window.innerWidth - SIDE_TOOLBAR_REVEAL_DISTANCE_RIGHT;
   if (isRTL() !== reverse) {
@@ -46,5 +46,7 @@ export function isMouseNearSideToolbar(e, window, reverse) {
   // const atBottom =
   //     e.y > window.innerHeight - SIDE_TOOLBAR_REVEAL_DISTANCE_BOTTOM;
   const atTop = e.y < SIDE_TOOLBAR_REVEAL_DISTANCE_BOTTOM
+  console.log(atTop,atSide);
+  
   return atSide && atTop;
 }
