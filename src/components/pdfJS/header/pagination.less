@@ -1,0 +1,79 @@
+.pagination{
+    text-align: center;
+    white-space: nowrap;
+    .pageselector{
+        color: #fff;
+        display: flex;
+        font-size: 0.81rem;
+        .total{
+            padding: 0 3px;
+            text-align: start;
+            width: calc(2ch);
+        }
+        .pageselector_container:focus-within, .pageselector_container:hover {
+        background: rgba(0, 0, 0, 0.5);
+        }
+        .pageselector_container{
+            padding: 0 3px;
+            text-align: start;
+            width: calc(2ch);
+            .row_container{
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                .input_container{
+                    border-radius: var(--cr-input-border-radius, 4px);
+                    overflow: hidden;
+                    position: relative;
+                    width: var(--cr-input-width, 100%);
+                    .inner_input_container{
+                        background-color: var(--cr-input-background-color);
+                        box-sizing: border-box;
+                        padding: 0;
+                        align-items: center;
+                        display: flex;
+                        justify-content: space-between;
+                        position: relative;
+                        input{
+                            -webkit-appearance: none;
+                            background-color: transparent;
+                            border: none;
+                            box-sizing: border-box;
+                            caret-color: transparent;
+                            color: white;
+                            font-family: inherit;
+                            font-size: inherit;
+                            line-height: inherit;
+                            min-height: var(--cr-input-min-height, auto);
+                            outline: none;
+                            padding-bottom: var(--cr-input-padding-bottom, 6px);
+                            padding-inline-end: var(--cr-input-padding-end, 8px);
+                            padding-inline-start: var(--cr-input-padding-start, 8px);
+                            padding-top: var(--cr-input-padding-top, 6px);
+                            text-align: inherit;
+                            // text-overflow: ellipsis;
+                            width: 100%;
+                            border-bottom: var(--cr-input-border-bottom, none);
+                            caret-color: white;
+                            padding: 0;
+                            text-align: end;
+                        }
+                    }
+                    .underline{
+                        border-bottom: 2px solid transparent;
+                        bottom: 0;
+                        box-sizing: border-box;
+                        left: 0;
+                        margin: auto;
+                        opacity: 0;
+                        position: absolute;
+                        right: 0;
+                        transition: opacity 120ms ease-out, width 0s linear 180ms;
+                        width: 0;
+                    }
+                }
+            }
+        }
+    }
+}
