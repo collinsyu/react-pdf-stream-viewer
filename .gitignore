@@ -17,5 +17,5 @@ npm-debug.log*
 /coverage
 .idea
 yarn.lock
-# /src
+/src
 /backup
