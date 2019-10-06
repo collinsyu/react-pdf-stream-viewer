@@ -65,6 +65,10 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
       this.staticZoomWidth = 0;
       this.staticZoomHeight = 0;
       this.createPDF(nextProps.filePath);
+      this.setState({
+        showToolbar:true,
+        showZoombar:true
+      })
     }
   }
   hideToolbarsIfAllowed = ()=>{
@@ -99,7 +103,7 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
 
     let showZoombar = isMouseNearSideToolbar({
       y:e.y - this.container.offsetTop,
-      x:e.x + window.innerWidth - this.container.offsetWidth
+      x:e.x + window.innerWidth - this.container.offsetWidth - this.container.offsetLeft
     } as any, this.window_, this.reverseSideToolbar_);
     this.isMouseNearSideToolbar_ = showZoombar;
     let x = this.state.showToolbar && this.state.showZoombar;
