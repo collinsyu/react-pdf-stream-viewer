@@ -99,7 +99,7 @@ export default class GestureDetector {
    * @private
    */
   onTouchStart_(event) {
-    console.log("touchu",event)
+    // console.log("touchu",event)
     this.lastTouchTouchesCount_ = event.touches.length;
     if (!this.wasTwoFingerTouch()) {
       return;

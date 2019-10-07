@@ -37,7 +37,7 @@ export default class Container extends PureComponent<ContainerProps> {
      */
     onPinchUpdate_(e) {
         // Throttle number of pinch events to one per frame.
-            console.log("update",e);
+            // console.log("update",e);
         if (!this.sentPinchEvent_) {
         this.sentPinchEvent_ = true;
         window.requestAnimationFrame(() => {
@@ -55,7 +55,7 @@ export default class Container extends PureComponent<ContainerProps> {
      * @private
      */
     onPinchEnd_(e) {
-            console.log("end",e);
+            // console.log("end",e);
             // Using rAF for pinch end prevents pinch updates scheduled by rAF getting
         // sent after the pinch end.
         window.requestAnimationFrame(() => {
@@ -73,7 +73,7 @@ export default class Container extends PureComponent<ContainerProps> {
      * @private
      */
     onPinchStart_(e) {
-            console.log("start",e);
+            // console.log("start",e);
         // We also use rAF for pinch start, so that if there is a pinch end event
         // scheduled by rAF, this pinch start will be sent after.
         window.requestAnimationFrame(() => {

@@ -65,7 +65,7 @@ export default class Container extends PureComponent<ContainerProps,ContainerPro
         const {total=0} = this.props;
         const {value} = this.state;
         let x = total.toString().length;
-        console.log("total",total);
+        // console.log("total",total);
         
         if(!total){
             return null

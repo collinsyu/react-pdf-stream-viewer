@@ -13,18 +13,30 @@ export default class Container extends PureComponent<ContainerProps> {
         this.p=0;
     }
     componentWillReceiveProps(nextprops:any){
-        if(nextprops.process == 100){
-            // 清楚settimeinterval
-
-            this.transformProgress(100);
-            clearInterval(this.interval)
-            // 消失
-            setTimeout(() => {
-                this.main.style.visibility = "hidden"
-            }, 200);
+        if(nextprops.process != this.props.process){
+            // console.log("next process",nextprops.process);
+            
+            if(nextprops.process == 100){
+                // 清楚settimeinterval
+    
+                this.transformProgress(100);
+                clearInterval(this.interval)
+                // 消失
+                setTimeout(() => {
+                    this.main.style.visibility = "hidden"
+                }, 200);
+            }
+            if(nextprops.process == 1){
+                this.fakeloading()
+                setTimeout(() => {
+                    this.main.style.visibility = "visible"
+                }, 200);
+                
+            }
         }
     }
     fakeloading=()=>{
+        this.p = 0;
        // 先快后慢，永远不要到一百; 平均大概 10ms
         this.interval = setInterval(()=>{
             this.p = this.p + (90-this.p)*0.6;
@@ -32,9 +44,14 @@ export default class Container extends PureComponent<ContainerProps> {
         },720)
     }
     componentDidMount(){
-        this.fakeloading()
+        if(this.props.process>0){
+            this.fakeloading()
+        }
     }
     transformProgress(ratio=0) {
+        if(!this.main){
+            return
+        }
         var transform = 'scaleX(' + (ratio / 100) + ')';
         this.main.style.transform = this.main.style.webkitTransform = transform;
     }

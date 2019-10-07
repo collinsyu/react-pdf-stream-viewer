@@ -46,7 +46,7 @@ export default class Container extends PureComponent<ContainerProps> {
     }
     download=()=>{
         // NOTE: 2019-09-30 12:27:57 这里暂时可以直接调用打开链接下载，因为是流文件
-        console.log(this.props.filePath);
+        // console.log(this.props.filePath);
         
         
     }
@@ -72,7 +72,9 @@ export default class Container extends PureComponent<ContainerProps> {
                         <div className={"buttons"}>
                             <Icon type="roate-right" onClick={roate}/>
                             <Icon type="file-download" onClick={this.download}/>
-                            <Icon type="print" onClick={()=>console.log("rotae click")}/>
+                            <Icon type="print" onClick={()=>{
+                                // console.log("rotae click")
+                            }}/>
                         </div>
                     </div>
                 </div>
