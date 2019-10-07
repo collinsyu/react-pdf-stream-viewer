@@ -221,8 +221,12 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
           if(err.fileurl !== this.taskStack[this.taskStack.length-1]){
             return
           }
+          
+          
           // console.log('PDF Object created use time ', (__t0-Date.now())/1000+"ms");
           _self.PDF = err.data;
+          console.log(_self.PDF);
+          
           let pageProps = _self.state.pageProps;
           pageProps.total = _self.PDF._pdfInfo.numPages
           // 修改total
@@ -354,7 +358,7 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
   render() {
     const { process, screenType,pageProps,loading, showZoombar,showToolbar } = this.state;
     const {current, total,} = pageProps;
-    const { filePath } = this.props;
+    const { filePath , fileName} = this.props;
     // console.log('this.state', this.state);
 
     return (
@@ -362,6 +366,7 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
         {/* new header with toolbar */}
         <Header
         filePath={filePath}
+        fileName={fileName}
         renderPDfByPage={this.renderPDfByPage}
         pageProps={pageProps}
         roate={this.roate}

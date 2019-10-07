@@ -60,7 +60,7 @@ export default class Container extends PureComponent<ContainerProps> {
                     <div className={"aligner"}>
                         {/* title */}
                         <span className={"title"} >
-                            text-est.pdf
+                            {this.props.fileName||"文件预览"}
                         </span>
                         {/* pagination */}
                         <Pagination
