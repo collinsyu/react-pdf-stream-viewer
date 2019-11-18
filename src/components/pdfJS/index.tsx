@@ -176,7 +176,7 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
     
   }
   createPDF = (fileurl:string)=> {
-    
+    const {params} = this.props;
     // NOTE: 2019-09-26 09:33:39 这里处理下loading
     this.setState({process:1})
     let __t0 = Date.now();
@@ -187,6 +187,10 @@ export default class PDFView extends Component<IndexProps,IndexProps> {
     var _self = this;
     var pdfjsLib = (window as any).pdfjsLib;
 
+    var loadingTask = pdfjsLib.getDocument({
+      url:fileurl,
+      ...params
+    });
     var loadingTask = pdfjsLib.getDocument(fileurl);
     // console.log(loadingTask);
     // console.log(loadingTask.taskStack);

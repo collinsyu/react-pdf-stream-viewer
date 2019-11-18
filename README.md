@@ -19,6 +19,14 @@ import PDFView from 'react.pdf.stream';
 ReactDOM.render(<PDFView filePath="required" />, mountNode);
 ```
 
+
+# Props
+`params` you can set some default props in this, like `httpHeaders`...
+
+`filePath` file request url
+
+`fileName` file name
+
 # 🤝 Contributing
 
 

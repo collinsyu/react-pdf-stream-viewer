@@ -1,6 +1,6 @@
 {
   "name": "react.pdf.stream",
-  "version": "0.0.0-beta-8",
+  "version": "0.0.0-beta-9",
   "description": "show your pdf file in web app. Supprot static file url and stream data",
   "main": "index.js",
   "keywords": [

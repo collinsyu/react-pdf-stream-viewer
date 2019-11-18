@@ -24,6 +24,12 @@ import PDFView from 'react.pdf.stream';
 ReactDOM.render(<PDFView filePath="required" />, mountNode);
 ```
 
+# 参数
+`params` 这里面可以设置请求头`httpHeaders` 和其他一些pdfjs支持的参数
+
+`filePath` 文件请求地址
+
+`fileName` 文件名称
 # 🤝 欢迎提bug
 
     
