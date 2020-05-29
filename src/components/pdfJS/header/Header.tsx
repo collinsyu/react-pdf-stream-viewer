@@ -2,7 +2,8 @@ import React,{ Component,PureComponent } from 'react'
 import "./header.less";
 import Icon from "../Icons";
 import Pagination from "./pagination";
-import Progress from "../progress"
+import Progress from "../progress";
+import printJS from "print-js";
 export interface ContainerProps {
     roate:() => any;
     show:boolean;
@@ -73,6 +74,9 @@ export default class Container extends PureComponent<ContainerProps> {
                             <Icon type="roate-right" onClick={roate}/>
                             <Icon type="file-download" onClick={this.download}/>
                             <Icon type="print" onClick={()=>{
+                                    printJS({
+                                        printable: this.props.filePath,
+                                    });
                                 // console.log("rotae click")
                             }}/>
                         </div>
