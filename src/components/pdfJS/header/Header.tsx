@@ -48,7 +48,9 @@ export default class Container extends PureComponent<ContainerProps> {
     download=()=>{
         // NOTE: 2019-09-30 12:27:57 这里暂时可以直接调用打开链接下载，因为是流文件
         // console.log(this.props.filePath);
-        
+         const a = document.createElement("a");
+       a.href = this.props.filePath;
+       a.dispatchEvent(new MouseEvent("click"));
         
     }
     render(){
@@ -77,7 +79,6 @@ export default class Container extends PureComponent<ContainerProps> {
                                     printJS({
                                         printable: this.props.filePath,
                                     });
-                                // console.log("rotae click")
                             }}/>
                         </div>
                     </div>
