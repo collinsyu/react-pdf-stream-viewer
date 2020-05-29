@@ -1,6 +1,6 @@
 {
   "name": "react.pdf.stream",
-  "version": "0.0.0-beta-11",
+  "version": "0.0.0-beta-13",
   "description": "show your pdf file in web app. Supprot static file url and stream data",
   "main": "index.js",
   "keywords": [
@@ -23,6 +23,7 @@
     "lib:index": "babel index.es6.js --out-file index.js",
     "pub": "webpack",
     "build":" npm run cpless && npm run babel && npm run clean",
+    "publish-npm":"npm run tsc && npm run build-ts && npm run cpless",
     "demo": "umi dev"
   },
   "files": [
@@ -47,7 +48,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "typescript": "^3.6.3",
-       "print-js": "^1.0.63"
+    "print-js": "^1.0.63"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.0.0-beta.36",
